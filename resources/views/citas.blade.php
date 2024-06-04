@@ -1,37 +1,49 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Lista de pacientes') }}
-        </h2>
-    </x-slot>
+  <x-slot name="header">
+      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+          {{ __('Lista de citas') }}
+      </h2>
+  </x-slot>
 
-    <div class="py-12">
-        <table class="m-auto table-fixed">
-            <thead>
+  <div class="p-3 relative overflow-x-auto">
+      <!-- Añade responsive:breakpoint para ajustar el diseño en diferentes tamaños de pantalla -->
+      <table class="w-full text-sm text-left rtl:text-right text-gray-500 responsive:table-fixed">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-50">
               <tr>
-                <th>Numero de cita</th>
-                <th>Nombre del paciente</th>
-                <th>Fecha</th>
-                <th>Acciones</th>
+                  <th scope="col" class="px-6 py-3 w-full sm:w-auto">
+                      Numero de cita
+                  </th>
+                  <th scope="col" class="px-6 py-3 w-full sm:w-auto">
+                      Nombre paciente
+                  </th>
+                  <th scope="col" class="px-6 py-3 w-full sm:w-auto">
+                      Fecha
+                  </th>
+                  <th scope="col" class="px-6 py-3 w-full sm:w-auto">
+                      Acciones
+                  </th>
               </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                <td>Malcolm Lockyer</td>
-                <td>1961</td>
+          </thead>
+          <tbody>
+              <tr class="bg-white border-b">
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                      1234
+                  </th>
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                      Yatzari Eduve Pecina Vidales
+                  </th>
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                      12-02-2023
+                  </th>
+                  <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <div class="flex flex-wrap gap-2">
+                      <button class="rounded-full bg-blue-500 text-gray-950 p-2 w-full sm:w-auto hover:bg-blue-400">Ver</button>
+                      <button class="rounded-full bg-blue-500 text-gray-950 p-2 w-full sm:w-auto hover:bg-blue-400">Editar</button>
+                      <button class="rounded-full bg-blue-500 text-gray-950 p-2 w-full sm:w-auto hover:bg-blue-400">Borrar</button>
+                    </div>
+                  </th>
               </tr>
-              <tr>
-                <td>Witchy Woman</td>
-                <td>The Eagles</td>
-                <td>1972</td>
-              </tr>
-              <tr>
-                <td>Shining Star</td>
-                <td>Earth, Wind, and Fire</td>
-                <td>1975</td>
-              </tr>
-            </tbody>
-          </table>
-    </div>
+          </tbody>
+      </table>
+  </div>
 </x-app-layout>

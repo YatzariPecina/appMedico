@@ -7,6 +7,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/recepcionista', function () {
+    return view('pacientes');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -17,7 +21,19 @@ Route::get('/secretary_inicio', function () {
 
 Route::get('/citas', function () {
     return view('citas');
-})->middleware(['auth', 'verified'])->name('datos_usuario');
+})->middleware(['auth', 'verified'])->name('citas');
+
+Route::get('/pacientes', function () {
+    return view('pacientes');
+})->middleware(['auth', 'verified'])->name('pacientes');
+
+Route::get('/medicos', function () {
+    return view('medicos');
+})->middleware(['auth', 'verified'])->name('medicos');
+
+Route::get('/registrar_paciente', function () {
+    return view('medicos');
+})->middleware(['auth', 'verified'])->name('medicos');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
