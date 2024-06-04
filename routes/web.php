@@ -19,6 +19,14 @@ Route::get('/secretary_inicio', function () {
     return view('menu_secretaria');
 })->middleware(['auth', 'verified'])->name('secretary_inicio');
 
+Route::get('/crud_productos', function () {
+    return view('crud_productos');
+})->middleware(['auth', 'verified'])->name('crud_productos');
+
+Route::get('/edit_producto', function () {
+    return view('edit_producto');
+})->middleware(['auth', 'verified'])->name('edit_producto');
+
 Route::get('/citas', function () {
     return view('citas');
 })->middleware(['auth', 'verified'])->name('citas');
