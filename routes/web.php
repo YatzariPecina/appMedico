@@ -15,6 +15,10 @@ Route::get('/secretary_inicio', function () {
     return view('menu_secretaria');
 })->middleware(['auth', 'verified'])->name('secretary_inicio');
 
+Route::get('/crud_productos', function () {
+    return view('crud_productos');
+})->middleware(['auth', 'verified'])->name('crud_productos');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
