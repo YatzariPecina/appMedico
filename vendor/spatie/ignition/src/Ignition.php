@@ -169,7 +169,7 @@ class Ignition
     /** @deprecated Use `setTheme('dark')` instead */
     public function useDarkMode(): self
     {
-        return $this->setTheme('dark');
+        return $this->setTheme('media');
     }
 
     /** @deprecated Use `setTheme($theme)` instead */

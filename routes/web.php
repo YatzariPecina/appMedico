@@ -43,6 +43,14 @@ Route::get('/registrar_paciente', function () {
     return view('medicos');
 })->middleware(['auth', 'verified'])->name('medicos');
 
+Route::get('/citas/registrarCita', function () {
+    return view('registrarCita');
+})->middleware(['auth', 'verified'])->name('medicos');
+
+Route::get('/servicios/registrarServicio', function () {
+    return view('registrarServicio');
+})->middleware(['auth', 'verified'])->name('servicios');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
