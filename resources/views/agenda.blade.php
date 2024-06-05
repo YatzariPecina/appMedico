@@ -1,5 +1,8 @@
 <x-app-layout>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- SweetAlert2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
     <style>
         body {
             background-color: #f8f9fa;
@@ -20,6 +23,7 @@
         .table th, .table td {
             text-align: center;
             vertical-align: middle;
+            cursor: pointer;
         }
     </style>
 
@@ -30,7 +34,6 @@
     </x-slot>
 
     <div class="container agenda-container">
-
         <div class="agenda-table">
             <table class="table table-bordered">
                 <thead class="thead-dark">
@@ -48,36 +51,54 @@
                 <tbody>
                     <tr>
                         <th scope="row">8:00 - 9:00</th>
-                        <td>---</td>
-                        <td></td>
-                        <td>---</td>
-                        <td></td>
-                        <td>---</td>
-                        <td></td>
-                        <td></td>
+                        <td onclick="showAlert('Reunión')">Reunión</td>
+                        <td onclick="showAlert('')"></td>
+                        <td onclick="showAlert('---')">---</td>
+                        <td onclick="showAlert('')"></td>
+                        <td onclick="showAlert('---')">---</td>
+                        <td onclick="showAlert('')"></td>
+                        <td onclick="showAlert('')"></td>
                     </tr>
                     <tr>
                         <th scope="row">9:00 - 10:00</th>
-                        <td></td>
-                        <td>---</td>
-                        <td></td>
-                        <td>---</td>
-                        <td></td>
-                        <td>---</td>
-                        <td></td>
+                        <td onclick="showAlert('')"></td>
+                        <td onclick="showAlert('---')">---</td>
+                        <td onclick="showAlert('')"></td>
+                        <td onclick="showAlert('---')">---</td>
+                        <td onclick="showAlert('')"></td>
+                        <td onclick="showAlert('---')">---</td>
+                        <td onclick="showAlert('')"></td>
                     </tr>
                     <tr>
                         <th scope="row">10:00 - 11:00</th>
-                        <td>---</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>---</td>
-                        <td></td>
-                        <td></td>
+                        <td onclick="showAlert('---')">---</td>
+                        <td onclick="showAlert('')"></td>
+                        <td onclick="showAlert('')"></td>
+                        <td onclick="showAlert('')"></td>
+                        <td onclick="showAlert('---')">---</td>
+                        <td onclick="showAlert('')"></td>
+                        <td onclick="showAlert('')"></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function showAlert(content) {
+            Swal.fire({
+                title: 'Detalle de la Agenda',
+                text: content || 'No hay detalles disponibles',
+                confirmButtonText: 'Cerrar'
+            });
+        }
+    </script>
 </x-app-layout>
