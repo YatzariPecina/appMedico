@@ -37,9 +37,9 @@
                   </th>
                   <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                     <div class="flex flex-wrap gap-2">
-                      <button class="rounded-full bg-blue-500 text-gray-950 p-2 w-full sm:w-auto hover:bg-blue-400">Ver</button>
-                      <button class="rounded-full bg-blue-500 text-gray-950 p-2 w-full sm:w-auto hover:bg-blue-400">Editar</button>
-                      <button class="rounded-full bg-blue-500 text-gray-950 p-2 w-full sm:w-auto hover:bg-blue-400">Borrar</button>
+                      <a href="#" class="rounded-full bg-blue-500 text-gray-950 p-2 w-full sm:w-auto hover:bg-blue-400">Ver</a>
+                      <a href="#" class="rounded-full bg-blue-500 text-gray-950 p-2 w-full sm:w-auto hover:bg-blue-400">Editar</a>
+                      <a href="#" class="rounded-full bg-blue-500 text-gray-950 p-2 w-full sm:w-auto hover:bg-blue-400">Borrar</a>
                     </div>
                   </th>
               </tr>

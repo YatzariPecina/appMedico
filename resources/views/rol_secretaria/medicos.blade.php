@@ -37,17 +37,26 @@
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                         1234
                     </th>
-                    <td class="px-6 py-4">
+                    <th class="px-6 py-4">
                         Yatzari Eduve Pecina Vidales
-                    </td>
-                    <td class="px-6 py-4">
-                        yatzq
-                    </td>
-                    <td class="px-6 py-4">
-                      <button class="rounded-full bg-blue-500 text-gray-950 p-2 w-1/4 hover:bg-blue-400">Ver</button>
-                      <button class="rounded-full bg-blue-500 text-gray-950 p-2 w-1/4 hover:bg-blue-400">Editar</button>
-                      <button class="rounded-full bg-blue-500 text-gray-950 p-2 w-1/4 hover:bg-blue-400">Borrar</button>
-                    </td>
+                    </th>
+                    <th class="px-6 py-4">
+                        yatzari@gmail.com
+                    </th>
+                    <th class="px-6 py-4">
+                        8341068958
+                    </th>
+                    <th class="px-6 py-4">
+                        Anatomía Patológica
+                    </th>
+                    <th class="px-6 py-4">
+                        Cirujano
+                    </th>
+                    <th class="px-6 py-4 flex flex-col items-start">
+                      <a href="#" class="mb-1 rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Ver</a>
+                      <a href="#" class="mb-1 rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Editar</a>
+                      <a href="#" class="mb-1 rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Borrar</a>
+                    </th>
                 </tr>
             </tbody>
         </table>

@@ -6,6 +6,9 @@
     </x-slot>
 
     <div class="p-3 relative overflow-x-auto">
+        <div class="my-4">
+            <a href="{{ route('pacientes.create') }}" class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Añadir paciente</a>  
+        </div>
         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>
@@ -50,12 +53,12 @@
                         8341068958
                     </th>
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        <button class="rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Ver expediente</button>  
+                        <a href="#" class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Ver expediente</a>  
                     </th>
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                      <button class="rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Ver</button>
-                      <button class="rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Editar</button>
-                      <button class="rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Borrar</button>
+                      <a href="#" class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Ver</a>
+                      <a href="#" class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Editar</a>
+                      <a href="#" class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Borrar</a>
                     </th>
                 </tr>
             </tbody>

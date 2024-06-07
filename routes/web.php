@@ -1,15 +1,15 @@
 <?php
 
+use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Paciente;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/recepcionista', function () {
-    return view('pacientes');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::resource('pacientes', PacienteController::class)->middleware(['auth', 'verified']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -32,19 +32,15 @@ Route::get('/agenda', function () {
 })->middleware(['auth', 'verified'])->name('agenda');
 
 Route::get('/citas', function () {
-    return view('citas');
+    return view('rol_secretaria.citas');
 })->middleware(['auth', 'verified'])->name('citas');
 
-Route::get('/pacientes', function () {
-    return view('pacientes');
-})->middleware(['auth', 'verified'])->name('pacientes');
-
 Route::get('/medicos', function () {
-    return view('medicos');
+    return view('rol_secretaria.medicos');
 })->middleware(['auth', 'verified'])->name('medicos');
 
-Route::get('/registrar_paciente', function () {
-    return view('medicos');
+Route::get('/pacientes/registrar_paciente', function () {
+    return view('registroPacientes');
 })->middleware(['auth', 'verified'])->name('medicos');
 
 Route::get('/citas/registrarCita', function () {
