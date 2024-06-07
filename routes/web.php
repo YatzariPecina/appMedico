@@ -27,6 +27,10 @@ Route::get('/agenda', function () {
     return view('agenda');
 })->middleware(['auth', 'verified'])->name('agenda');
 
+Route::get('/lista_pacientes', function () {
+    return view('lista_pacientes');
+})->middleware(['auth', 'verified'])->name('lista_pacientes');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
