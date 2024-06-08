@@ -7,6 +7,14 @@
 
     <div class="p-3 relative overflow-x-auto">
         <div class="my-4">
+            @session('success')
+                <div class="alert alert-success" role="alert">
+                    {{ $value }}
+                </div>
+            @endsession
+        </div>
+
+        <div class="my-4">
             <a href="{{ route('pacientes.create') }}" class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Añadir paciente</a>  
         </div>
         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
@@ -36,21 +44,22 @@
                 </tr>
             </thead>
             <tbody>
+                @forelse ($pacientes as $paciente)
                 <tr class="bg-white border-b">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        1234
+                        {{ $paciente->id}}
                     </th>
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        Yatzari Eduve Pecina Vidales
+                        {{ $paciente->nombre }}
                     </th>
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        20
+                        {{ $paciente->edad }}
                     </th>
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        F
+                        {{ $paciente->sexo }}
                     </th>
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        8341068958
+                        {{ $paciente->telefono }}
                     </th>
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                         <a href="#" class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Ver expediente</a>  
@@ -61,6 +70,14 @@
                       <a href="#" class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Borrar</a>
                     </th>
                 </tr>
+                @empty
+                <td colspan="6">
+                    <span class="text-danger">
+                        <strong>No hay pacientes</strong>
+                    </span>
+                </td>
+                @endforelse
+                
             </tbody>
         </table>
     </div>
