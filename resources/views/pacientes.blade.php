@@ -25,9 +25,6 @@
                         Telefono
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Expediente
-                    </th>
-                    <th scope="col" class="px-6 py-3">
                         Acciones
                     </th>
                 </tr>
@@ -48,9 +45,6 @@
                     </th>
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                         8341068958
-                    </th>
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        <button class="rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Ver expediente</button>  
                     </th>
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                       <button class="rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Ver</button>

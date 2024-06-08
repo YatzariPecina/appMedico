@@ -41,7 +41,16 @@
                         Yatzari Eduve Pecina Vidales
                     </td>
                     <td class="px-6 py-4">
-                        yatzq
+                        yatzq@edu.mx
+                    </td>
+                    <td class="px-6 py-4">
+                        123456789
+                    </td>
+                    <td class="px-6 py-4">
+                        enfermera
+                    </td>
+                    <td class="px-6 py-4">
+                        emergencias
                     </td>
                     <td class="px-6 py-4">
                       <button class="rounded-full bg-blue-500 text-gray-950 p-2 w-1/4 hover:bg-blue-400">Ver</button>
