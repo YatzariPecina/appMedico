@@ -13,11 +13,7 @@ Route::get('/agenda', function () {
     return view('citas.agenda');
 })->middleware(['auth', 'verified'])->name('agenda');
 
-Route::resource('pacientes', PacienteController::class)->middleware(['auth', 'verified']);
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::resource('pacientes', PacienteController::class);
 
 Route::get('/citas', function () {
     return view('citas.citas');
@@ -43,10 +39,6 @@ Route::get('/secretary_inicio', function () {
     return view('menu_secretaria');
 })->middleware(['auth', 'verified'])->name('secretary_inicio');
 
-Route::get('/pacientes', function () {
-    return view('pacientes.pacientes');
-})->middleware(['auth', 'verified'])->name('pacientes');
-
 Route::get('/registrarCita', function () {
     return view('citas.registrarCita');
 })->middleware(['auth', 'verified'])->name('registrarCita');
@@ -54,10 +46,6 @@ Route::get('/registrarCita', function () {
 Route::get('/registrarServicio', function () {
     return view('servicios.registrarServicio');
 })->middleware(['auth', 'verified'])->name('registrarServicio');
-
-Route::get('registroPacientes', function () {
-    return view('pacientes.registroPacientes');
-})->middleware(['auth', 'verified'])->name('registroPacientes');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

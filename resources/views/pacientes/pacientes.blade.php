@@ -15,7 +15,8 @@
         </div>
 
         <div class="my-4">
-            <a href="{{ route('pacientes.create') }}" class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Añadir paciente</a>  
+            <a href="{{ route('pacientes.create') }}"
+                class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Añadir paciente</a>
         </div>
         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
@@ -41,35 +42,46 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="bg-white border-b">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                       
-                    </th>
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        
-                    </th>
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        
-                    </th>
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        
-                    </th>
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        <a href="#" class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Ver expediente</a>  
-                    </th>
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                      <a href="#" class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Ver</a>
-                      <a href="#" class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Editar</a>
-                      <a href="#" class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Borrar</a>
-                    </th>
-                </tr>
-                <td colspan="6">
-                    <span class="text-danger">
-                        <strong>No hay pacientes</strong>
-                    </span>
-                </td>
-                
+                @forelse ($pacientes as $paciente)
+                    <tr class="bg-white border-b">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                            {{ $paciente->nombre }}
+                        </th>
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                            {{ $paciente->edad }}
+                        </th>
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                            {{ $paciente->sexo }}
+                        </th>
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                            {{ $paciente->telefono }}
+                        </th>
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                            <a href="#" class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Ver
+                                expediente</a>
+                        </th>
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                            <form action="{{ route('pacientes.destroy', $paciente->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <a href="{{ route('pacientes.show', $paciente->id) }}"
+                                    class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Ver</a>
+                                <a href="{{ route('pacientes.edit', $paciente->id) }}"
+                                    class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Editar</a>
+                                <button type="submit" onclick="return confirm('Do you want to delete this product?');"
+                                    class="rounded-md bg-red-500 text-gray-950 p-2 hover:bg-red-400">Borrar</a>
+                            </form>
+                        </th>
+                    </tr>
+                @empty
+                    <td colspan="6">
+                        <span class="text-danger">
+                            <strong>No hay pacientes</strong>
+                        </span>
+                    </td>
+                @endforelse
             </tbody>
         </table>
+        {{ $pacientes->links() }}
     </div>
 </x-app-layout>
