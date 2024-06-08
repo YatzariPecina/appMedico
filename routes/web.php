@@ -7,6 +7,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/recepcionista', function () {
+    return view('pacientes');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -26,10 +30,6 @@ Route::get('/edit_producto', function () {
 Route::get('/agenda', function () {
     return view('agenda');
 })->middleware(['auth', 'verified'])->name('agenda');
-
-Route::get('/lista_pacientes', function () {
-    return view('lista_pacientes');
-})->middleware(['auth', 'verified'])->name('lista_pacientes');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
