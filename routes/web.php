@@ -23,6 +23,10 @@ Route::get('/crud_productos', function () {
     return view('crud_productos');
 })->middleware(['auth', 'verified'])->name('crud_productos');
 
+Route::get('/lista_pacientes', function () {
+    return view('lista_pacientes');
+})->middleware(['auth', 'verified'])->name('lista_pacientes');
+
 Route::get('/edit_producto', function () {
     return view('edit_producto');
 })->middleware(['auth', 'verified'])->name('edit_producto');
