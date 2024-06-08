@@ -38,9 +38,6 @@
                                     Telefono
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Expediente
-                                </th>
-                                <th scope="col" class="px-6 py-3">
                                     Acciones
                                 </th>
                             </tr>
@@ -63,13 +60,10 @@
                                     30 años
                                 </td>
                                 <td class="px-6 py-4">
+                                    F
+                                </td>
+                                <td class="px-6 py-4">
                                     123456789
-                                </td>
-                                <td class="px-6 py-4">
-                                    Caducidad 1
-                                </td>
-                                <td class="px-6 py-4">
-                                    Expediente
                                 </td>
                                 <td class="flex items-center px-6 py-4">
                                     <a href="edit_producto" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>

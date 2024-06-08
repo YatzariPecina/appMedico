@@ -78,7 +78,7 @@
                                     precio 1
                                 </td>
                                 <td class="flex items-center px-6 py-4">
-                                    <a href="edit_producto" class="font-medium text-blue-600">Edit</a>
+                                    <a href="edit_producto" class="font-medium text-blue-600 mr-4">Edit</a>
                                     <a href="#" class="font-medium text-red-600">Remove</a>
                                 </td>
                             </tr>

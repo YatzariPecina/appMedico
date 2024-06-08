@@ -39,6 +39,7 @@
                     </th>
                     <th class="px-6 py-4">
                         Yatzari Eduve Pecina Vidales
+<<<<<<< HEAD:resources/views/rol_secretaria/medicos.blade.php
                     </th>
                     <th class="px-6 py-4">
                         yatzari@gmail.com
@@ -57,6 +58,26 @@
                       <a href="#" class="mb-1 rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Editar</a>
                       <a href="#" class="mb-1 rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Borrar</a>
                     </th>
+=======
+                    </td>
+                    <td class="px-6 py-4">
+                        yatzq@edu.mx
+                    </td>
+                    <td class="px-6 py-4">
+                        123456789
+                    </td>
+                    <td class="px-6 py-4">
+                        enfermera
+                    </td>
+                    <td class="px-6 py-4">
+                        emergencias
+                    </td>
+                    <td class="px-6 py-4">
+                      <button class="rounded-full bg-blue-500 text-gray-950 p-2 w-1/4 hover:bg-blue-400">Ver</button>
+                      <button class="rounded-full bg-blue-500 text-gray-950 p-2 w-1/4 hover:bg-blue-400">Editar</button>
+                      <button class="rounded-full bg-blue-500 text-gray-950 p-2 w-1/4 hover:bg-blue-400">Borrar</button>
+                    </td>
+>>>>>>> jaki:resources/views/medicos.blade.php
                 </tr>
             </tbody>
         </table>
