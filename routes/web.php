@@ -26,6 +26,14 @@ Route::get('/crud_productos', function () {
     return view('productos.crud_productos');
 })->middleware(['auth', 'verified'])->name('crud_productos');
 
+Route::get('/registrar_producto', function () {
+    return view('productos.registrar_producto');
+})->middleware(['auth', 'verified'])->name('registrar_producto');
+
+Route::get('/show_producto', function () {
+    return view('productos.show_producto');
+})->middleware(['auth', 'verified'])->name('show_producto');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

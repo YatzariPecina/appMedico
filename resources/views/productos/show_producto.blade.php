@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Edit de Productos') }}
+            {{ __('Ver Producto') }}
         </h2>
     </x-slot>
 
@@ -36,11 +36,9 @@
                         <label for="precio" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Precio Unitario:</label>
                         <input type="text" id="precio" class="form-control" placeholder="Ingrese el precio unitario">
                     </div>
-                    <div class="form-group mt-4">
-                        <button type="submit" class="btn btn-success mr-2">Aceptar</button>
-                    </div>
                 </form>
-                <a href="crud_productos"><button type="submit" class="btn btn-danger">Cancelar</button></a>
+                <a href="crud_productos"><button type="submit" 
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Regresar</button></a>
 
             </div>
         </div>

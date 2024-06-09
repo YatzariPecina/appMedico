@@ -9,7 +9,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    {{ __(".") }}
+                    <a href="registrarServicio"><button type="submit" 
+                    class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Agregar</button></a>
+
                 </div>
 
                 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -54,7 +56,8 @@
                                     Precio 1
                                 </td>
                                 <td class="flex items-center px-6 py-4">
-                                    <a href="edit_producto" class="font-medium text-blue-600 mr-4">Edit</a>
+                                    <a href="show_Servicio" class="font-medium text-green-600 mr-4">Ver</a>
+                                    <a href="edit_Servicio" class="font-medium text-blue-600 mr-4">Edit</a>
                                     <a href="#" class="font-medium text-red-600"> Remove</a>
                                 </td>
                             </tr>
