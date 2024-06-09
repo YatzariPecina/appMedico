@@ -46,7 +46,9 @@
         </header>
     </div>
 
-    
+    <div>
+        <img src="{{ asset('img/index.png') }}" alt="">
+    </div>
 
     <footer class="bg-white rounded-lg shadow">
         <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">

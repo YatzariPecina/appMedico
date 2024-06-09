@@ -1,12 +1,12 @@
 <nav x-data="{ open: false }" class="bg-white border-r border-gray-100 h-full">
     <!-- Primary Navigation Menu -->
-    <div class="px-4 sm:px-6 lg:px-8 py-4"> 
+    <div class="px-4 sm:px-6 lg:px-8 py-4">
         <div class="flex flex-col h-full">
             <!-- Logo -->
             <div class="shrink-0 flex items-center">
                 <a href="{{ route('dashboard') }}">
                     <div class="flex">
-                        <img src="{{ asset('img/logo.png') }}" alt="logo" class="h-12 w-auto py-1">
+                        <img src="{{ asset('img/logo.png') }}" alt="logo" class="h-16 mx-auto w-auto py-1">
                     </div>
                 </a>
             </div>
@@ -55,6 +55,28 @@
                     {{ __('Dashboard') }}
                 </x-nav-link>
             </div>
+            <!-- Aqui pones links generales, que no sean de un rol -->
+            <div class="mt-4 space-y-2">
+                <x-nav-link :href="route('pacientes.index')" :active="request()->routeIs('pacientes')">
+                    {{ __('Listado de pacientes') }}
+                </x-nav-link>
+            </div>
+            <div class="mt-4 space-y-2">
+                <x-nav-link :href="route('medicos.index')" :active="request()->routeIs('pacientes')">
+                    {{ __('Listado de medicos') }}
+                </x-nav-link>
+            </div>
+
+            @switch(Auth::user()->rol)
+                @case('Doctor')
+                    <!-- Aqui van los links de el doctor -->
+                    @break
+                @case('Secretario/a')
+                    <!-- Aqui estan los links del secretario -->
+                    @break
+                @default
+                    
+            @endswitch
         </div>
     </div>
 

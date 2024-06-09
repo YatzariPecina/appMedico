@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('telefono');
             $table->string('profesion');
             $table->string('tipo_medico');
+            $table->timestamps();
         });
     }
 
