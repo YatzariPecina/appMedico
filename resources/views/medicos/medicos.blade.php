@@ -62,11 +62,13 @@
                                 class="mb-1 rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Ver</a>
                             <a href="{{ route('medicos.edit', $medico->id) }}"
                                 class="mb-1 rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Editar</a>
-                            <form action="{{ route('medicos.destroy', $medico->id) }}" method="post"></form>
-                            @csrf
-                            @method('PUT')
-                            <button type="submit" onclick="return confirm('¿Seguro que quieres eliminar a este doctuor?');"
-                                class="mb-1 rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Borrar</button>
+                            <form action="{{ route('medicos.destroy', $medico->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit"
+                                    onclick="return confirm('¿Seguro que quieres eliminar a este doctor?');"
+                                    class="mb-1 rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Borrar</button>
+                            </form>
                         </th>
                     </tr>
                 @empty

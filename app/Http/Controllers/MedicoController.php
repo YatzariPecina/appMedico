@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreMedicoRequest;
+use App\Http\Requests\UpdateMedicoRequest;
 use App\Models\Medico;
 
 class MedicoController extends Controller
@@ -52,9 +53,10 @@ class MedicoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StoreMedicoRequest $request, Medico $medico)
+    public function update(UpdateMedicoRequest $request, Medico $medico)
     {
-        $medico->update($request->validate());
+        $medico->fill($request->validated());
+        $medico->save();
 
         return redirect()->route('medicos.index')->withSuccess('Medico actualizado');
     }
