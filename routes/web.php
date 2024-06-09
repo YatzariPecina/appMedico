@@ -50,6 +50,18 @@ Route::get('registroPacientes', function () {
     return view('registroPacientes');
 })->middleware(['auth', 'verified'])->name('registroPacientes');
 
+Route::get('/crud_Servicio', function () {
+    return view('crud_servicios');
+})->middleware(['auth', 'verified'])->name('crud_Servicio');
+
+Route::get('/edit_Servicio', function () {
+    return view('servicios.edit_Servicio');
+})->middleware(['auth', 'verified'])->name('edit_Servicio');
+
+Route::get('/show_Servicio', function () {
+    return view('servicios.showServicio');
+})->middleware(['auth', 'verified'])->name('show_Servicio');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
