@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePacienteRequest;
 use App\Http\Requests\UpdatePacienteRequest;
 use App\Models\Paciente;
-use Illuminate\Cache\RedisTagSet;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class PacienteController extends Controller
@@ -33,14 +31,16 @@ class PacienteController extends Controller
      */
     public function store(StorePacienteRequest $request)
     {
+        //Crear el paciente
         Paciente::create($request->validated());
-
+        //Una vez creado redirigir al index con el mensaje de paciente agregado
         return redirect()->route('pacientes.index')->withSuccess('Nuevo paciente agregado');
     }
 
     /**
      * Display the specified resource.
      */
+    //Vista de informacion del paciente
     public function show(Paciente $paciente)
     {
         return view('pacientes.showPaciente', compact('paciente'));
@@ -49,6 +49,7 @@ class PacienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
+    //Vista para editar la informacion del paciente
     public function edit(Paciente $paciente)
     {
         return view('pacientes.edit', compact('paciente'));
@@ -57,16 +58,18 @@ class PacienteController extends Controller
     /**
      * Update the specified resource in storage.
      */
+    //Modificar la info del paciente en la tabla
     public function update(UpdatePacienteRequest $request, Paciente $paciente)
     {
         $paciente->update($request->validated());
 
-        redirect()->back()->withSuccess('Paciente actualizado');
+        return redirect()->route('pacientes.index')->withSuccess('Paciente actualizado');
     }
 
     /**
      * Remove the specified resource from storage.
      */
+    //Borrar al paciente
     public function destroy(Paciente $paciente)
     {
         $paciente->delete();

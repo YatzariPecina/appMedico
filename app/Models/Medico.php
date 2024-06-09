@@ -5,19 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Paciente extends Model
+class Medico extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'nombre',
-        'edad',
-        'sexo',
-        'telefono'
+        'correo',
+        'telefono',
+        'profesion',
+        'tipo_medico'
     ];
-
-    public function expediente()
-    {
-        return $this->hasOne(Expediente::class);
-    }
 }

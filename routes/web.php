@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Paciente;
@@ -13,7 +14,9 @@ Route::get('/agenda', function () {
     return view('citas.agenda');
 })->middleware(['auth', 'verified'])->name('agenda');
 
-Route::resource('pacientes', PacienteController::class);
+Route::resource('pacientes', PacienteController::class)->middleware(['auth', 'verified']);
+
+Route::resource('/medicos', MedicoController::class)->middleware(['auth', 'verified']);
 
 Route::get('/citas', function () {
     return view('citas.citas');
@@ -30,10 +33,6 @@ Route::get('/dashboard', function () {
 Route::get('/edit_producto', function () {
     return view('productos.edit_producto');
 })->middleware(['auth', 'verified'])->name('edit_producto');
-
-Route::get('/medicos', function () {
-    return view('medicos');
-})->middleware(['auth', 'verified'])->name('medicos');
 
 Route::get('/secretary_inicio', function () {
     return view('menu_secretaria');
