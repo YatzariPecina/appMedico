@@ -31,10 +31,14 @@ class PacienteController extends Controller
      */
     public function store(StorePacienteRequest $request)
     {
-        //Crear el paciente
-        Paciente::create($request->validated());
-        //Una vez creado redirigir al index con el mensaje de paciente agregado
-        return redirect()->route('pacientes.index')->withSuccess('Nuevo paciente agregado');
+        try {
+            //Crear el paciente
+            Paciente::create($request->validated());
+            //Una vez creado redirigir al index con el mensaje de paciente agregado
+            return redirect()->route('pacientes.index')->withSuccess('Nuevo paciente agregado');
+        } catch (\Exception $th) {
+            return back()->withErrors(['error' => 'Hubo un error al insertar los datos. Por favor intentelo de nuevo']);
+        }
     }
 
     /**
@@ -61,9 +65,14 @@ class PacienteController extends Controller
     //Modificar la info del paciente en la tabla
     public function update(UpdatePacienteRequest $request, Paciente $paciente)
     {
-        $paciente->update($request->validated());
-
-        return redirect()->route('pacientes.index')->withSuccess('Paciente actualizado');
+        try {
+            //Con un request modificar el paciente con los datos validados con el request
+            $paciente->update($request->validated());
+            //Redirigir a el index para visualizar el paciente
+            return redirect()->route('pacientes.index')->withSuccess('Paciente actualizado');
+        } catch (\Exception $th) {
+            return back()->withErrors(['error' => 'Hubo un error al modificar los datos del paciente']);
+        }
     }
 
     /**
@@ -72,8 +81,14 @@ class PacienteController extends Controller
     //Borrar al paciente
     public function destroy(Paciente $paciente)
     {
+        try {
+            //Eliminar el paciente de la base de datos
         $paciente->delete();
 
+        //Redirigir a el index con success
         return redirect()->route('pacientes.index')->withSuccess('Paciente eliminado');
+        } catch (\Exception $th) {
+            return back()->withErrors(['error' => 'Hubo un error al eliminar al paciente']); 
+        }
     }
 }

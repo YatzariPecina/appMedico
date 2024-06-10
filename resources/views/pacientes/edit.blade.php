@@ -9,12 +9,21 @@
 
     <div class="py-10">
         <div class="container mt-2">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-md-12">
                     <form action="{{ route('pacientes.update', $paciente->id) }}" method="POST">
                         @csrf
                         @method('PUT')
-                        
+
                         <div class="form-group">
                             <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900">Nombre:</label>
                             <input type="text" value="{{ $paciente->nombre }}" id="nombre" name="nombre"

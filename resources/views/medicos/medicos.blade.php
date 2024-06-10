@@ -37,6 +37,7 @@
                 </tr>
             </thead>
             <tbody>
+                <!-- Mostrar datos -->
                 @forelse ($medicos as $medico)
                     <tr class="bg-white border-b">
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">

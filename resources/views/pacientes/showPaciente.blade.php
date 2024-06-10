@@ -6,6 +6,15 @@
     </x-slot>
 
     <div class="p-6">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <div class="m-auto w-1/2 p-4 rounded-md shadow-lg bg-slate-50">
             <div class="flex">
                 <label for="nombre" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Nombre:</label>
