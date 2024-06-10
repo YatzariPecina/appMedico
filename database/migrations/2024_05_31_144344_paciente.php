@@ -17,7 +17,13 @@ return new class extends Migration
             $table->integer('edad');
             $table->string('sexo');
             $table->string('telefono');
-            $table->foreignId('id_expediente')->nullable();
+
+            $table->unsignedBigInteger('id_medico')->nullable();
+            $table->foreign('id_medico')->references('id')->on('medicos');
+
+            $table->unsignedBigInteger('id_expediente')->unique()->nullable();
+            $table->foreign('id_expediente')->references('id')->on('expedientes');
+
             $table->timestamps();
         });    
     }

@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('expedientes', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_paciente');
             $table->string('seguimiento');
             $table->char('archivo');
             $table->string('extension');
