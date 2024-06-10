@@ -9,6 +9,7 @@
         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>
+                    <!-- ver la tabla de medicos existentes -->
                     <th scope="col" class="px-6 py-3">
                         Id de medico
                     </th>

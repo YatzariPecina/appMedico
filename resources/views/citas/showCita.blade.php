@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Nuevo paciente') }}
+            {{ __('Ver el Paciente') }}
         </h2>
     </x-slot>
 
@@ -9,12 +9,14 @@
         <div class="p-5">
             <div class="grid gap-6 mb-6 md:grid-cols-2">
                 <div>
+                    <!-- campo para ver el nombre del paciente -->
                     <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900">Nombre(s)</label>
                     <input type="text" id="first_name"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                         placeholder="John" required />
                 </div>
                 <div>
+                    <!-- campo para ver los apellidos del paciente -->
                     <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900">Apellidos</label>
                     <input type="text" id="last_name"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
@@ -23,15 +25,16 @@
             </div>
             <div>
                 <div class="mb-3">
+                    <!-- campo para ver la edad del paciente -->
                     <label for="edad" class="block mb-2 text-sm font-medium text-gray-900">Edad</label>
                     <input type="number" id="edad"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                         placeholder="" required />
                 </div>
-                <!-- Select sexo -->
+                
+                <!-- campo para ver el genero del paciente -->
                 <div class="mb-3">
-                    <label for="sexo" class="block mb-2 text-sm font-medium text-gray-900">Elige el
-                        sexo</label>
+                    <label for="sexo" class="block mb-2 text-sm font-medium text-gray-900">Elige el sexo</label>
                     <select required id="sexo"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                         <option value="">--</option>
@@ -40,6 +43,7 @@
                     </select>
                 </div>
                 <div class="mb-3">
+                    <!-- campo para ver el telefono del paciente -->
                     <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Phone number</label>
                     <input type="tel" id="phone"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
@@ -47,6 +51,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="block">
+                        <!-- campo para ver/cargar el expediente del paciente -->
                         <label class="block mb-2 text-sm font-medium text-gray-900" for="file">Subir expediente</label>
                         <input type="file"
                             class="focus:outline-none block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4

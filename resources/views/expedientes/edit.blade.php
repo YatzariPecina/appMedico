@@ -14,16 +14,19 @@
                     <form action="{{ route('pacientes.update', $paciente->id) }}" method="POST">
                         @csrf
                         <div class="form-group">
+                            <!-- campo para editar el nombre del paciente -->
                             <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900">Nombre:</label>
                             <input type="text" value="{{ $paciente->nombre }}" id="nombre" name="nombre"
                                 class="form-control" placeholder="Ingrese el nombre">
                         </div>
                         <div class="form-group mt-3">
+                            <!-- campo para editar la edad del paciente -->
                             <label for="edad" class="block mb-2 text-sm font-medium text-gray-900">Edad:</label>
                             <input type="number" value="{{ $paciente->edad }}" id="edad" name="edad"
                                 class="form-control" placeholder="Ingrese la edad">
                         </div>
                         <div class="form-group mt-3">
+                            <!-- campo para editar el genero del paciente -->
                             <label for="sexo" class="block mb-2 text-sm font-medium text-gray-900">Sexo:</label>
                             <select name="sexo" id="sexo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                 @foreach (['F', 'M'] as $opcion)
@@ -42,6 +45,7 @@
                             </select>
                         </div>
                         <div class="form-group mt-3">
+                            <!-- campo para editar el telefono del paciente -->
                             <label for="telefono" class="block mb-2 text-sm font-medium text-gray-900">Telefono:</label>
                             <input type="text" value="{{ $paciente->telefono }}" id="telefono" name="telefono" class="form-control"
                                 placeholder="Ingrese el telefono">

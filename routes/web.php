@@ -3,7 +3,10 @@
 use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServicioController;
+
 use App\Models\Paciente;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -17,6 +20,8 @@ Route::get('/agenda', function () {
 Route::resource('pacientes', PacienteController::class)->middleware(['auth', 'verified']);
 
 Route::resource('/medicos', MedicoController::class)->middleware(['auth', 'verified']);
+
+Route::get('crud_servicios', [ServicioController::class, 'index'])->name('crud_servicios');
 
 Route::get('/citas', function () {
     return view('citas.citas');
@@ -54,9 +59,9 @@ Route::get('/registrarServicio', function () {
     return view('servicios.registrarServicio');
 })->middleware(['auth', 'verified'])->name('registrarServicio');
 
-Route::get('/crud_Servicio', function () {
-    return view('servicios.crud_servicios');
-})->middleware(['auth', 'verified'])->name('crud_Servicio');
+Route::get('/crud_servicios', function () {
+    return view('crud_servicios');
+})->middleware(['auth', 'verified'])->name('crud_servicios');
 
 Route::get('/edit_Servicio', function () {
     return view('servicios.edit_Servicio');

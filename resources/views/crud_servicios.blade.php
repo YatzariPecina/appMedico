@@ -39,28 +39,29 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="bg-white border-b hover:bg-gray-50">
-                                <td class="w-4 p-4">
-                                    <div class="flex items-center">
-                                        <input id="checkbox-table-search-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
-                                        <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
-                                    </div>
-                                </td>
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                                    ID 1
-                                </th>
-                                <td class="px-6 py-4">
-                                    Nombre 1
-                                </td>
-                                <td class="px-6 py-4">
-                                    Precio 1
-                                </td>
-                                <td class="flex items-center px-6 py-4">
-                                    <a href="show_Servicio" class="font-medium text-green-600 mr-4">Ver</a>
-                                    <a href="edit_Servicio" class="font-medium text-blue-600 mr-4">Edit</a>
-                                    <a href="#" class="font-medium text-red-600"> Remove</a>
-                                </td>
-                            </tr>
+                            @foreach ($servicios as $servicio)
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="w-4 p-4">
+                                        <div class="flex items-center">
+                                            <input id="checkbox-table-search-1" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                            <label for="checkbox-table-search-1" class="sr-only">checkbox</label>
+                                        </div>
+                                    </td>
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        {{ $servicio->id }}
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        {{ $servicio->nombre }}
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        {{ $servicio->precio }}
+                                    </td>
+                                    <td class="flex items-center px-6 py-4">
+                                        <a href="{{ route('servicios.showServicio', $servicio->id) }}" class="font-medium text-green-600 mr-4">Ver</a>
+                                        <a href="edit_Servicio" class="font-medium text-blue-600 mr-4">Edit</a>
+                                        <a href="#" class="font-medium text-red-600"> Remove</a>
+                                    </td>
+                                </tr>
                         </tbody>
                     </table>
                 </div>
