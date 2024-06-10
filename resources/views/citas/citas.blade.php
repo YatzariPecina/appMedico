@@ -6,7 +6,7 @@
   </x-slot>
 
   <div class="p-3 relative overflow-x-auto">
-      <!-- Añade responsive:breakpoint para ajustar el diseño en diferentes tamaños de pantalla -->
+    <!-- -->
       <table class="w-full text-sm text-left rtl:text-right text-gray-500 responsive:table-fixed">
           <thead class="text-xs text-gray-700 uppercase bg-gray-50">
               <tr>

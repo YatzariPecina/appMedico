@@ -3,7 +3,10 @@
 use App\Http\Controllers\MedicoController;
 use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ServicioController;
+
 use App\Models\Paciente;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,6 +21,8 @@ Route::resource('pacientes', PacienteController::class)->middleware(['auth', 've
 
 Route::resource('/medicos', MedicoController::class)->middleware(['auth', 'verified']);
 
+Route::get('crud_servicios', [ServicioController::class, 'index'])->name('crud_servicios');
+
 Route::get('/citas', function () {
     return view('citas.citas');
 })->middleware(['auth', 'verified'])->name('citas');
@@ -25,6 +30,14 @@ Route::get('/citas', function () {
 Route::get('/crud_productos', function () {
     return view('productos.crud_productos');
 })->middleware(['auth', 'verified'])->name('crud_productos');
+
+Route::get('/registrar_producto', function () {
+    return view('productos.registrar_producto');
+})->middleware(['auth', 'verified'])->name('registrar_producto');
+
+Route::get('/show_producto', function () {
+    return view('productos.show_producto');
+})->middleware(['auth', 'verified'])->name('show_producto');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -45,6 +58,18 @@ Route::get('/registrarCita', function () {
 Route::get('/registrarServicio', function () {
     return view('servicios.registrarServicio');
 })->middleware(['auth', 'verified'])->name('registrarServicio');
+
+Route::get('/crud_servicios', function () {
+    return view('crud_servicios');
+})->middleware(['auth', 'verified'])->name('crud_servicios');
+
+Route::get('/edit_Servicio', function () {
+    return view('servicios.edit_Servicio');
+})->middleware(['auth', 'verified'])->name('edit_Servicio');
+
+Route::get('/show_Servicio', function () {
+    return view('servicios.showServicio');
+})->middleware(['auth', 'verified'])->name('show_Servicio');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

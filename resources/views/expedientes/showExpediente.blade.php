@@ -8,24 +8,28 @@
     <div class="p-6">
         <div class="m-auto w-1/2 p-4 rounded-md shadow-lg bg-slate-50">
             <div class="flex">
+                <!-- campo para ver el nombre del paciente -->
                 <label for="nombre" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Nombre:</label>
                 <div class="col-md-6 text-lg">
                     {{ $paciente->nombre }}
                 </div>
             </div>
             <div class="flex">
+                <!-- campo para ver la edad del paciente -->
                 <label for="edad" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Edad:</label>
                 <div class="col-md-6 text-lg">
                     {{ $paciente->edad }}
                 </div>
             </div>
             <div class="flex">
+                <!-- campo para ver el genero del paciente -->
                 <label for="sexo" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Sexo:</label>
                 <div class="col-md-6 text-lg">
                     {{ $paciente->sexo }}
                 </div>
             </div>
             <div class="flex">
+                <!-- campo para ver el telefono del paciente -->
                 <label for="telefono" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Telefono:</label>
                 <div class="col-md-6 text-lg">
                     {{ $paciente->telefono }}

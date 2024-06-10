@@ -8,6 +8,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
     <div class="py-10">
+        <!-- en caso de errores mostrar alerta -->
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -23,28 +24,33 @@
                     <form action="{{ route('medicos.store') }}" method="POST">
                         @csrf
                         <div class="form-group">
+                            <!-- campo para agregar el nombre del medico -->
                             <label for="nombre" class="block mb-2 text-sm font-medium text-gray-900">Nombre:</label>
                             <input type="text" id="nombre" name="nombre" class="form-control"
                                 placeholder="Ingrese el nombre">
                         </div>
                         <div class="form-group mt-3">
+                            <!-- campo para agregar el correo del medico -->
                             <label for="correo" class="block mb-2 text-sm font-medium text-gray-900">Correo
                                 electronico:</label>
                             <input type="email" id="correo" name="correo" class="form-control"
                                 placeholder="Ingrese su correo electronico">
                         </div>
                         <div class="form-group mt-3">
+                            <!-- campo para agregar el telefono del medico -->
                             <label for="telefono" class="block mb-2 text-sm font-medium text-gray-900">Telefono:</label>
                             <input type="text" id="telefono" name="telefono" class="form-control"
                                 placeholder="Ingrese su telefono">
                         </div>
                         <div class="form-group mt-3">
+                            <!-- campo para agregar la profesion del medico -->
                             <label for="profesion"
                                 class="block mb-2 text-sm font-medium text-gray-900">Profesion:</label>
                             <input type="text" id="profesion" name="profesion" class="form-control"
                                 placeholder="Ingrese su profesion">
                         </div>
                         <div class="form-group mt-3">
+                            <!-- campo para agregar el tipo del medico -->
                             <label for="tipo_medico" class="block mb-2 text-sm font-medium text-gray-900">Tipo de
                                 medico:</label>
                             <input type="text" id="tipo_medico" name="tipo_medico" class="form-control"

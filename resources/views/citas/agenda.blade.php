@@ -48,7 +48,7 @@
                         <th scope="col">Domingo</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody> <!-- ejemplo de agenda con contenido fijo -->
                     <tr>
                         <th scope="row">8:00 - 9:00</th>
                         <td onclick="showAlert('Reunión')">Reunión</td>
@@ -93,6 +93,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
+        // Función para mostrar alerta con el detalle de la agenda
         function showAlert(content) {
             Swal.fire({
                 title: 'Detalle de la Agenda',
