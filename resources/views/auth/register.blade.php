@@ -24,6 +24,7 @@
             <select id="rol" name="rol"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                 <option value="">Escoge un rol</option>
+                <option value="Administrador">Adiministrador</option>
                 <option value="Secretario/a">Secretario/a</option>
                 <option value="Doctor">Doctor</option>
             </select>

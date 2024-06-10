@@ -29,9 +29,14 @@ class MedicoController extends Controller
      */
     public function store(StoreMedicoRequest $request)
     {
-        Medico::create($request->validated());
-
-        return redirect()->route('medicos.index')->withSuccess('Medico agregado con exito');
+        try {
+            //Crear un nuevo medico validando el request
+            Medico::create($request->validated());
+            //Redireccionar al index con success
+            return redirect()->route('medicos.index')->withSuccess('Medico agregado con exito');
+        } catch (\Exception $th) {
+            return back()->withErrors(['error' => 'Hubo un problema al insertar los datos. Por favor, inténtalo de nuevo.']);
+        }
     }
 
     /**
@@ -55,10 +60,16 @@ class MedicoController extends Controller
      */
     public function update(UpdateMedicoRequest $request, Medico $medico)
     {
-        $medico->fill($request->validated());
-        $medico->save();
-
-        return redirect()->route('medicos.index')->withSuccess('Medico actualizado');
+        try {
+            //Validar los datos del request, que coincidan con lo que lo pedido para lo datos
+            $medico->fill($request->validated());
+            //Guardar el cambio
+            $medico->save();
+            //Retornar a la vista
+            return redirect()->route('medicos.index')->withSuccess('Medico actualizado');
+        } catch (\Exception $th) {
+            return back()->withErrors(['error' => 'Hubo un problema al modificar los datos. Por favor, inténtalo de nuevo.']);
+        }
     }
 
     /**
@@ -66,8 +77,14 @@ class MedicoController extends Controller
      */
     public function destroy(Medico $medico)
     {
-        $medico->delete();
+        try {
+            //Eliminar al medico
+            $medico->delete();
 
-        return redirect()->route('medicos.index')->withSuccess('Medico eliminado');
+            //Retornar a la vista para visualizar el cambio
+            return redirect()->route('medicos.index')->withSuccess('Medico eliminado');
+        } catch (\Exception $th) {
+            return back()->withErrors(['error' => 'Hubo un problema al eliminar al medico. Por favor, inténtalo de nuevo.']);
+        }
     }
 }
