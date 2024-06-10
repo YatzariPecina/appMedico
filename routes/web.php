@@ -54,12 +54,8 @@ Route::get('/registrarServicio', function () {
     return view('servicios.registrarServicio');
 })->middleware(['auth', 'verified'])->name('registrarServicio');
 
-Route::get('registroPacientes', function () {
-    return view('registroPacientes');
-})->middleware(['auth', 'verified'])->name('registroPacientes');
-
 Route::get('/crud_Servicio', function () {
-    return view('crud_servicios');
+    return view('servicios.crud_servicios');
 })->middleware(['auth', 'verified'])->name('crud_Servicio');
 
 Route::get('/edit_Servicio', function () {
