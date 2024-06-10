@@ -10,6 +10,7 @@
             <a href="{{ route('medicos.create') }}"
                 class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Añadir medico</a>
         </div>
+        <!-- ver la tabla de medicos existentes -->
         <table class="w-full text-sm text-left rtl:text-right text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>
@@ -66,6 +67,7 @@
                             <form action="{{ route('medicos.destroy', $medico->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
+                                <!-- confirmar al eliminar un doctor -->
                                 <button type="submit"
                                     onclick="return confirm('¿Seguro que quieres eliminar a este doctor?');"
                                     class="mb-1 rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Borrar</button>

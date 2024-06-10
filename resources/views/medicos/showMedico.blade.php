@@ -6,6 +6,7 @@
     </x-slot>
 
     <div class="p-6">
+        <!-- campo para mostrar alertas de errores -->
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -17,31 +18,43 @@
         @endif
         <div class="m-auto w-1/2 p-4 rounded-md shadow-lg bg-slate-50">
             <div class="flex">
+                <!-- campo para ver el nombre del medico -->
                 <label for="nombre" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Nombre:</label>
                 <div class="col-md-6 text-lg">
                     {{ $medico->nombre }}
                 </div>
             </div>
             <div class="flex">
+                <!-- campo para ver la edad del medico -->
                 <label for="edad" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Edad:</label>
                 <div class="col-md-6 text-lg">
                     {{ $medico->correo }}
                 </div>
             </div>
             <div class="flex">
+                <!-- campo para ver la correo del medico 
+                <label for="edad" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Correo:</label>
+                <div class="col-md-6 text-lg">
+                    {{ $medico->correo }}
+                </div>
+            </div> -->
+            <div class="flex">
+                <!-- campo para ver el genero del medico -->
                 <label for="sexo" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Sexo:</label>
                 <div class="col-md-6 text-lg">
                     {{ $medico->telefono }}
                 </div>
             </div>
             <div class="flex">
+                <!-- campo para ver el telefono del medico -->
                 <label for="telefono" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Telefono:</label>
                 <div class="col-md-6 text-lg">
                     {{ $medico->profesion }}
                 </div>
             </div>
             <div class="flex">
-                <label for="telefono" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Telefono:</label>
+                <!-- campo para ver el genero del medico -->
+                <label for="telefono" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Tipo:</label>
                 <div class="col-md-6 text-lg">
                     {{ $medico->tipo_medico }}
                 </div>
