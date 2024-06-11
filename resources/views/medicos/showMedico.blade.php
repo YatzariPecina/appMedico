@@ -28,16 +28,16 @@
                 <!-- campo para ver la edad del medico -->
                 <label for="edad" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Edad:</label>
                 <div class="col-md-6 text-lg">
-                    {{ $medico->correo }}
+                    {{ $medico->edad }}
                 </div>
             </div>
             <div class="flex">
-                <!-- campo para ver la correo del medico 
+                <!-- campo para ver la correo del medico -->
                 <label for="edad" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Correo:</label>
                 <div class="col-md-6 text-lg">
                     {{ $medico->correo }}
                 </div>
-            </div> -->
+            </div> 
             <div class="flex">
                 <!-- campo para ver el genero del medico -->
                 <label for="sexo" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Sexo:</label>

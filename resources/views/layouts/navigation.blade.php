@@ -62,14 +62,25 @@
                 </x-nav-link>
             </div>
             <div class="mt-4 space-y-2">
-                <x-nav-link :href="route('medicos.index')" :active="request()->routeIs('pacientes')">
+                <x-nav-link :href="route('medicos.index')" :active="request()->routeIs('medicos')">
                     {{ __('Listado de medicos') }}
+                </x-nav-link>
+            </div>
+
+            <div class="mt-4 space-y-2">
+                <x-nav-link :href="route('citas.index')" :active="request()->routeIs('citas')">
+                    {{ __('Citas') }}
                 </x-nav-link>
             </div>
 
             @switch(Auth::user()->rol)
                 @case('Doctor')
                     <!-- Aqui van los links de el doctor -->
+                    <div class="mt-4 space-y-2">
+                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                            {{ __('Dashboard') }}
+                        </x-nav-link>
+                    </div>
                     @break
                 @case('Secretario/a')
                     <!-- Aqui estan los links del secretario -->

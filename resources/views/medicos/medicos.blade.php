@@ -7,6 +7,22 @@
 
     <div class="p-3 relative overflow-x-auto">
         <div class="my-4">
+            @session('success')
+                <div class="alert alert-success" role="alert">
+                    {{ $value }}
+                </div>
+            @endsession
+        </div>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <div class="my-4">
             <a href="{{ route('medicos.create') }}"
                 class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Añadir medico</a>
         </div>

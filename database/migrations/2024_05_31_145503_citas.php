@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('citas', function(Blueprint $table){
             $table->id();
-            $table->foreignId('id_paciente');
-            $table->date('fecha');
+
+            $table->unsignedBigInteger('id_paciente');
+            $table->foreign('id_paciente')->references('id')->on('pacientes');
+
+            $table->datetimes('fecha');
         });
     }
 
