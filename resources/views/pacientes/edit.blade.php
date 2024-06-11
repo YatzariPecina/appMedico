@@ -59,6 +59,21 @@
                             <input type="text" value="{{ $paciente->telefono }}" id="telefono" name="telefono"
                                 class="form-control" placeholder="Ingrese el telefono">
                         </div>
+                        <div class="form-group mt-3">
+                            <label for="id_medico" class="block mb-2 text-sm font-medium text-gray-900">Elige el medico
+                                a cargo:</label>
+                            <select name="id_medico" id="id_medico"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                <option value="">--</option>
+                                @foreach ($medicos as $medico)
+                                    <option value="{{ $medico->id }}"
+                                        {{ $medico->id == $paciente->medico->id ? 'selected' : '' }}>
+                                        {{ $medico->nombre }}
+                                    </option>
+                                @endforeach
+
+                            </select>
+                        </div>
                         <div class="form-group mt-4">
                             <button type="submit" class="btn btn-success mr-2">Aceptar</button>
                             <a href="{{ route('pacientes.index') }}" class="btn btn-danger">Cancelar</a>

@@ -11,7 +11,7 @@ class StoreCitaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,8 @@ class StoreCitaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'id_paciente' => 'required|string',
+            'fecha' => 'required|string'
         ];
     }
 }

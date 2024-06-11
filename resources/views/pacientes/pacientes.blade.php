@@ -46,6 +46,9 @@
                         Telefono
                     </th>
                     <th scope="col" class="px-6 py-3">
+                        Nombre del medico a cargo
+                    </th>
+                    <th scope="col" class="px-6 py-3">
                         Acciones
                     </th>
                 </tr>
@@ -53,6 +56,9 @@
             <tbody>
                 @forelse ($pacientes as $paciente)
                     <tr class="bg-white border-b">
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                            {{ $paciente->id }}
+                        </th>
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                             {{ $paciente->nombre }}
                         </th>
@@ -66,8 +72,7 @@
                             {{ $paciente->telefono }}
                         </th>
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                            <a href="#" class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Ver
-                                expediente</a>
+                            {{ $paciente->medico->nombre }}
                         </th>
                         <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                             <form action="{{ route('pacientes.destroy', $paciente->id) }}" method="post">

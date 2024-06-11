@@ -17,27 +17,39 @@
         @endif
         <div class="m-auto w-1/2 p-4 rounded-md shadow-lg bg-slate-50">
             <div class="flex">
-                <label for="nombre" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Nombre:</label>
+                <label for="id" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Id del paciente:</label>
+                <div class="col-md-6 text-lg">
+                    {{ $paciente->id }}
+                </div>
+            </div>
+            <div class="flex">
+                <label for="" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Nombre del paciente:</label>
                 <div class="col-md-6 text-lg">
                     {{ $paciente->nombre }}
                 </div>
             </div>
             <div class="flex">
-                <label for="edad" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Edad:</label>
+                <label for="" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Edad:</label>
                 <div class="col-md-6 text-lg">
                     {{ $paciente->edad }}
                 </div>
             </div>
             <div class="flex">
-                <label for="sexo" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Sexo:</label>
+                <label for="" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Sexo:</label>
                 <div class="col-md-6 text-lg">
                     {{ $paciente->sexo }}
                 </div>
             </div>
             <div class="flex">
-                <label for="telefono" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Telefono:</label>
+                <label for="" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Telefono:</label>
                 <div class="col-md-6 text-lg">
                     {{ $paciente->telefono }}
+                </div>
+            </div>
+            <div class="flex">
+                <label for="" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Medico a cargo:</label>
+                <div class="col-md-6 text-lg">
+                    {{ $paciente->medico->nombre }}
                 </div>
             </div>
             <div class="">

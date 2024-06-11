@@ -25,7 +25,8 @@ class StorePacienteRequest extends FormRequest
             'nombre' => 'required|string|max:50',
             'edad' => 'required|integer|min:1|max:10000',
             'sexo' => 'required|string|max:1',
-            'telefono' => 'required|string|max:250'
+            'telefono' => 'required|string|max:250',
+            'id_medico' => 'required|string|max:250'
             //Agregar el id de expediente
         ];
     }

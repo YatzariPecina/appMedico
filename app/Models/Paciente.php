@@ -13,11 +13,17 @@ class Paciente extends Model
         'nombre',
         'edad',
         'sexo',
-        'telefono'
+        'telefono',
+        'id_medico'
     ];
 
     public function expediente()
     {
         return $this->hasOne(Expediente::class);
+    }
+
+    public function medico()
+    {
+        return $this->belongsTo(Medico::class, 'id_medico');
     }
 }

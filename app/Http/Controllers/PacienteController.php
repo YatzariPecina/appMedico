@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePacienteRequest;
 use App\Http\Requests\UpdatePacienteRequest;
+use App\Models\Medico;
 use App\Models\Paciente;
 use Illuminate\View\View;
 
@@ -23,7 +24,9 @@ class PacienteController extends Controller
      */
     public function create()
     {
-        return view('pacientes.registroPacientes');
+        return view('pacientes.registroPacientes', [
+            'medicos' => Medico::latest()->get()
+        ]);
     }
 
     /**
@@ -56,7 +59,10 @@ class PacienteController extends Controller
     //Vista para editar la informacion del paciente
     public function edit(Paciente $paciente)
     {
-        return view('pacientes.edit', compact('paciente'));
+        return view('pacientes.edit', [
+            'paciente' => $paciente,
+            'medicos' => Medico::latest()->get()
+        ]);
     }
 
     /**

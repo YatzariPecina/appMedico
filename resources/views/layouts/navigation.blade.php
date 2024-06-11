@@ -77,16 +77,25 @@
                 @case('Doctor')
                     <!-- Aqui van los links de el doctor -->
                     <div class="mt-4 space-y-2">
-                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                            {{ __('Dashboard') }}
+                        <x-nav-link :href="route('/agenda')" :active="request()->routeIs('agenda')">
+                            {{ __('Agenda del dia') }}
                         </x-nav-link>
                     </div>
-                    @break
+                @break
+
                 @case('Secretario/a')
                     <!-- Aqui estan los links del secretario -->
-                    @break
+                @break
+
+                @case('Administrador')
+                    <div class="mt-4 space-y-2">
+                        <x-nav-link :href="route('agenda')" :active="request()->routeIs('agenda')">
+                            {{ __('Agenda del dia') }}
+                        </x-nav-link>
+                    </div>
+                @break
+
                 @default
-                    
             @endswitch
         </div>
     </div>
