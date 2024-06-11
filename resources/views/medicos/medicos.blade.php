@@ -1,88 +1,104 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Lista de medicos') }}
+            {{ __('Lista de médicos') }}
         </h2>
     </x-slot>
 
-    <div class="p-3 relative overflow-x-auto">
-        <div class="my-4">
-            <a href="{{ route('medicos.create') }}"
-                class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Añadir medico</a>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
+                    <a href="{{ route('medicos.create') }}"><button type="submit" 
+                    class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Agregar médico</button></a>
+                </div>
+
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                            <tr>
+                                <th scope="col" class="p-4">
+                                    <div class="flex items-center">
+                                        <input id="checkbox-all-search" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                        <label for="checkbox-all-search" class="sr-only">checkbox</label>
+                                    </div>
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Id del médico
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Nombre del médico
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Correo
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Teléfono
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Profesión
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Tipo de médico
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Acciones
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($medicos as $medico)
+                                <tr class="bg-white border-b">
+                                    <th scope="col" class="p-4">
+                                        <div class="flex items-center">
+                                            <input id="checkbox-all-search" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500">
+                                            <label for="checkbox-all-search" class="sr-only">checkbox</label>
+                                        </div>
+                                    </th>
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        {{ $medico->id }}
+                                    </th>
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        {{ $medico->nombre }}
+                                    </th>
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        {{ $medico->correo }}
+                                    </th>
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        {{ $medico->telefono }}
+                                    </th>
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        {{ $medico->profesio }}
+                                    </th>
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        <a href="#" class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Ver
+                                            expediente</a>
+                                    </th>
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                                        <form action="{{ route('medicos.destroy', $medico->id) }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <a href="{{ route('medicos.show', $medico->id) }}"
+                                            class="font-medium text-green-600 mr-4">Ver</a>
+                                            <a href="{{ route('medicos.edit', $medico->id) }}"
+                                            class="font-medium text-blue-600 mr-4">Editar</a>
+                                            <button type="submit" onclick="return confirm('Do you want to delete this product?');"
+                                            class="font-medium text-red-600">Borrar</a>
+                                    </td>
+                                        </form>
+                                    </th>
+                                </tr>
+                            @empty
+                                <td colspan="6">
+                                    <span class="text-danger">
+                                        <strong>No hay pacientes</strong>
+                                    </span>
+                                </td>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-        <!-- ver la tabla de medicos existentes -->
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
-                <tr>
-                    <th scope="col" class="px-6 py-3">
-                        Id de medico
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Nombre del medico
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Correo
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Telefono
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Profesion
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Tipo de medico
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        Acciones
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Mostrar datos -->
-                @forelse ($medicos as $medico)
-                    <tr class="bg-white border-b">
-                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                            {{ $medico->id }}
-                        </th>
-                        <th class="px-6 py-4">
-                            {{ $medico->nombre }}
-                        </th>
-                        <th class="px-6 py-4">
-                            {{ $medico->correo }}
-                        </th>
-                        <th class="px-6 py-4">
-                            {{ $medico->telefono }}
-                        </th>
-                        <th class="px-6 py-4">
-                            {{ $medico->profesion }}
-                        </th>
-                        <th class="px-6 py-4">
-                            {{ $medico->tipo_medico }}
-                        </th>
-                        <th class="px-6 py-4 flex flex-col items-start">
-                            <a href="{{ route('medicos.show', $medico->id) }}"
-                                class="mb-1 rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Ver</a>
-                            <a href="{{ route('medicos.edit', $medico->id) }}"
-                                class="mb-1 rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Editar</a>
-                            <form action="{{ route('medicos.destroy', $medico->id) }}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <!-- confirmar al eliminar un doctor -->
-                                <button type="submit"
-                                    onclick="return confirm('¿Seguro que quieres eliminar a este doctor?');"
-                                    class="mb-1 rounded-full bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Borrar</button>
-                            </form>
-                        </th>
-                    </tr>
-                @empty
-                    <td colspan="6">
-                        <span class="text-danger">
-                            <strong>No hay medicos</strong>
-                        </span>
-                    </td>
-                @endforelse
-            </tbody>
-        </table>
-        {{ $medicos->links() }}
     </div>
 </x-app-layout>

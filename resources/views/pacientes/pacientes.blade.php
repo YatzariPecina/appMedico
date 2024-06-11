@@ -24,7 +24,7 @@
                                     </div>
                                 </th>
                                 <th scope="col" class="px-6 py-3">
-                                    Numero del paciente
+                                    Id del paciente
                                 </th>
                                 <th scope="col" class="px-6 py-3">
                                     Nombre del paciente
