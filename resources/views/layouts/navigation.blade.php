@@ -90,7 +90,7 @@
                 @case('Administrador')
                     <div class="mt-4 space-y-2">
                         <x-nav-link :href="route('agenda')" :active="request()->routeIs('agenda')">
-                            {{ __('Agenda del dia') }}
+                            {{ __('Agenda de la semana') }}
                         </x-nav-link>
                     </div>
                 @break

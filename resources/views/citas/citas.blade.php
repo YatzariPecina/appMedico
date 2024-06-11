@@ -6,7 +6,10 @@
   </x-slot>
 
   <div class="p-3 relative overflow-x-auto">
-    <!-- -->
+    <div class="my-4">
+        <a href="{{ route('citas.create') }}"
+            class="rounded-md bg-blue-500 text-gray-950 p-2 hover:bg-blue-400">Añadir cita</a>
+    </div>
       <table class="w-full text-sm text-left rtl:text-right text-gray-500 responsive:table-fixed">
           <thead class="text-xs text-gray-700 uppercase bg-gray-50">
               <tr>

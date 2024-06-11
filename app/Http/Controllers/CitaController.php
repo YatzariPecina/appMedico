@@ -24,8 +24,7 @@ class CitaController extends Controller
     public function create()
     {
         return view('citas.registrarCita', [
-            'medicos' => Medico::latest(),
-            'pacientes' => Paciente::latest()
+            'pacientes' => Paciente::latest()->get()
         ]);
     }
 
