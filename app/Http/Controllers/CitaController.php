@@ -35,7 +35,7 @@ class CitaController extends Controller
     {
         try {
             Cita::create($request->validate());
-            return redirect()->route('citas.index')->withSuccess('Cita crada correctamente');
+            return redirect()->route('citas.index')->withSuccess('Cita creada correctamente');
         } catch (\Exception $th) {
             return back()->withErrors(['error' => 'Hubo un problema al crear la cita. Por favor intentelo de nuevo']);
         }

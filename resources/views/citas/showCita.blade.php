@@ -5,67 +5,69 @@
         </h2>
     </x-slot>
 
-    <form>
-        <div class="p-5">
-            <div class="grid gap-6 mb-6 md:grid-cols-2">
-                <div>
-                    <!-- campo para ver el nombre del paciente -->
-                    <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900">Nombre(s)</label>
-                    <input type="text" id="first_name"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                        placeholder="John" required />
-                </div>
-                <div>
-                    <!-- campo para ver los apellidos del paciente -->
-                    <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900">Apellidos</label>
-                    <input type="text" id="last_name"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                        placeholder="Doe" required />
+    <div class="p-6">
+        <!-- campo para mostrar alertas de errores -->
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+        <div class="m-auto w-1/2 p-4 rounded-md shadow-lg bg-slate-50">
+            <div class="flex">
+                <!-- campo para ver el nombre del medico -->
+                <label for="nombre" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Nombre:</label>
+                <div class="col-md-6 text-lg">
+                    {{ $medico->nombre }}
                 </div>
             </div>
-            <div>
-                <div class="mb-3">
-                    <!-- campo para ver la edad del paciente -->
-                    <label for="edad" class="block mb-2 text-sm font-medium text-gray-900">Edad</label>
-                    <input type="number" id="edad"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                        placeholder="" required />
-                </div>
-                
-                <!-- campo para ver el genero del paciente -->
-                <div class="mb-3">
-                    <label for="sexo" class="block mb-2 text-sm font-medium text-gray-900">Elige el sexo</label>
-                    <select required id="sexo"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="">--</option>
-                        <option value="M">Masculino</option>
-                        <option value="F">Femenino</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <!-- campo para ver el telefono del paciente -->
-                    <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Phone number</label>
-                    <input type="tel" id="phone"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                        placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
-                </div>
-                <div class="mb-3">
-                    <label class="block">
-                        <!-- campo para ver/cargar el expediente del paciente -->
-                        <label class="block mb-2 text-sm font-medium text-gray-900" for="file">Subir expediente</label>
-                        <input type="file"
-                            class="focus:outline-none block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4
-                          file:rounded-full file:border-0 file:cursor-pointer cursor-pointer
-                          file:text-sm file:font-semibold
-                          file:bg-gray-900 file:text-white
-                          hover:file:bg-gray-800
-                        " id="file" />
-                    </label>
+            <div class="flex">
+                <!-- campo para ver la edad del medico -->
+                <label for="edad" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Edad:</label>
+                <div class="col-md-6 text-lg">
+                    {{ $medico->edad }}
                 </div>
             </div>
-            <a href="#"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Editar</a>
+            <div class="flex">
+                <!-- campo para ver la correo del medico -->
+                <label for="edad" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Correo:</label>
+                <div class="col-md-6 text-lg">
+                    {{ $medico->correo }}
+                </div>
+            </div> 
+            <div class="flex">
+                <!-- campo para ver el genero del medico -->
+                <label for="sexo" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Sexo:</label>
+                <div class="col-md-6 text-lg">
+                    {{ $medico->telefono }}
+                </div>
+            </div>
+            <div class="flex">
+                <!-- campo para ver el telefono del medico -->
+                <label for="telefono" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Telefono:</label>
+                <div class="col-md-6 text-lg">
+                    {{ $medico->profesion }}
+                </div>
+            </div>
+            <div class="flex">
+                <!-- campo para ver el genero del medico -->
+                <label for="telefono" class="block mb-2 mr-2 text-lg font-medium text-gray-900">Tipo:</label>
+                <div class="col-md-6 text-lg">
+                    {{ $medico->tipo_medico }}
+                </div>
+            </div>
+            <div class="">
+                <a href="{{ route('medicos.index') }}"
+                    class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white focus:outline-none">
+                    <span
+                        class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
+                        Regresar
+                    </span>
+                </a>
+            </div>
         </div>
-    </form>
-
+    </div>
 </x-app-layout>

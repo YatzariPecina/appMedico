@@ -5,7 +5,8 @@
         </h2>
     </x-slot>
 
-    <form>
+    <form action="{{ route('citas.store') }}" method="POST">
+        @csrf
         <div class="p-5">
             <div class="mb-3">
                 <label for="id_paciente" class="block mb-2 text-sm font-medium text-gray-900">Elige al paciente de la
@@ -25,8 +26,10 @@
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                     placeholder="" required />
             </div>
-            <button type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Agregar</button>
+            <div class="form-group mt-4">
+                <button type="submit" class="btn btn-success mr-2">Aceptar</button>
+                <a href="{{ route('citas.index') }}" class="btn btn-danger">Cancelar</a>
+            </div>
         </div>
     </form>
 
